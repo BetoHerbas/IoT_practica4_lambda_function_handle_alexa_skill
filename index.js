@@ -1,7 +1,7 @@
 const Alexa = require('ask-sdk-core');
 const AWS = require('aws-sdk');
 
-const IotData = new AWS.IotData({ endpoint: 'ENDPOINT' });
+const IotData = new AWS.IotData({ endpoint: 'a3lhpt6z01b2r3-ats.iot.us-east-2.amazonaws.com' });
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 const tableName = 'smartbands_user_thing';
 
@@ -120,7 +120,7 @@ const createDataRequestHandler = (intentName, dataField, successMessage) => ({
 
 const CheckHeartbeatIntentHandler = createDataRequestHandler('CheckHeartbeatIntent', 'heart_rate', 'El pulso es');
 const CheckActivityIntentHandler = createDataRequestHandler('CheckActivityIntent', 'activity_type', 'La actividad actual es');
-const CheckTemperatureIntentHandler = createDataRequestHandler('CheckTemperatureIntent', 'enviroment_temperature', 'La temperatura del entorno es');
+const CheckTemperatureIntentHandler = createDataRequestHandler('CheckTemperatureIntent', 'environment_temperature', 'La temperatura del entorno es');
 const CheckSpO2IntentHandler = createDataRequestHandler('CheckSpOIntent', 'SpO2', 'El nivel de oxígeno en la sangre es');
 const CheckStepsIntentHandler = createDataRequestHandler('CheckStepsIntent', 'steps', 'El número de pasos es');
 
